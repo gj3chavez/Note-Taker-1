@@ -1,3 +1,16 @@
+# Description
+This app will allow you to write and save notes. It works with Express.js back end and will save and retrieve note data from a JSON file.
+
+## App Preview
+
+## Technologies
+
+## Installation
+
+## Usage
+
+
+
 ## License
   ![License](https://img.shields.io/badge/License%20-MIT-orange)
   

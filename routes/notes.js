@@ -6,11 +6,6 @@ const uniqid = require('uniqid');
 
 // const db = JSON.parse(fs.readFileSync('../db/db.json', 'utf-8'));
 // const fs = require('fs');
-  
-
-
-
-
 
 notes.get('/',(req, res)=> {
     console.info(`${req.method} request received notes`);
@@ -28,10 +23,10 @@ notes.get('/',(req, res)=> {
 notes.post('/', (req,res)=>{
     console.info(`${req.method} request received notes`);
 
-    const {tittle, text} = req.body;
+    const {title, text} = req.body;
 
     const newNote ={
-        tittle,
+        title,
         text,
         id: uniqid()
     };
@@ -43,7 +38,7 @@ notes.post('/', (req,res)=>{
             const parsedData = JSON.parse(data);
             parsedData.push(newNote);
             fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err, text)=>{
-                if (er) {
+                if (err) {
                     console.error(err)
                 }
             })
@@ -54,7 +49,7 @@ notes.post('/', (req,res)=>{
 
 
 notes.delete('/:id', (req, res)=> {
-    const noteToDelete = re.params.id;
+    const noteToDelete = req.params.id;
 
     fs.readFile('./db/db.json', 'utf-8',(err, data)=>{
         if(err){

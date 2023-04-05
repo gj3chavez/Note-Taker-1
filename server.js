@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+// const fs = require('fs');
 const api = require('./routes/index');
 
 const app = express();
@@ -17,7 +18,19 @@ app.get('/',(req,res)=>{
 });
 app.get('/notes',(req,res)=>{
     res.sendFile(path.join(__dirname, '/public/notes.html'));
-});
+})
+
+// app.get('/api/notes',(req, res)=> {
+//     console.info(`${req.method} request received notes`);
+
+//     fs.readFile('./db/db.json', 'utf-8', (err, data)=>{
+//         if (err){
+//             console.error(err);
+//         } else{
+//             res.json(JSON.parse(data));
+//         }
+//     });
+// });
 
 app.listen(PORT, ()=> console.log(`App listening on port ${PORT}`));
 

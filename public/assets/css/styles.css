@@ -8,6 +8,9 @@ body {
 .save-note {
   display: none;
 }
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Caveat', cursive;
+}
 
 .icons i {
   margin-left: 15px;
@@ -33,7 +36,8 @@ body {
 .note-title {
   height: 50px;
   margin-top: 13px;
-  font-size: 3rem;
+  font-size: 2rem;
+  font-family: 'Caveat', cursive;
 }
 
 .note-title:read-only,
@@ -75,5 +79,14 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+  font-family: 'Caveat', cursive;
+  letter-spacing: 1pt;
+}
+
+.bg-dark{
+  background-color: #e91eb8!important;
+}
+.jumbotron{
+  background-color: #e91e631f!important;
 }
 
